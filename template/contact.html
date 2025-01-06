@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+    
+    <title>{% block title %}Contact us {% endblock title %}</title>
+    
+</head>
+<body>
+    {% block body %}
+   
+    {% for message in messages %}
+   {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+    {% endfor %}
+
+    <section class="section section-contact section--hidden">
+        <div class="container">
+          <h2 class="common-heading">contact me</h2>
+        </div>
+  
+        <div class="section-contact-main container">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class="grid grid-two-col">
+              <input type="text"name="name" id="" required placeholder="Name"/>
+              <input type="email" name="email" required placeholder="Email" autocomplete="false"/>
+            </div>
+            <div>
+              <input type="tel" name="phone" placeholder="Phone" />
+            </div>
+            <div>
+              <textarea name="content" id="" placeholder="Message"></textarea>
+            </div>
+  
+            <div>
+              <input type="submit" value="send message" class="btn" />
+            </div>
+          </form>
+        </div>
+      </section>
+
+    {% endblock body %}

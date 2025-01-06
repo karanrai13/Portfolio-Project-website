@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>{% block style %}{% endblock style %}</style>
+    <title>{% block title %} {% endblock title %}</title>
+
+    <link rel="stylesheet" href='{% static "css/style.css" %}'/>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="/"><img src='{% static "image/logo2.1.png" %}' alt=" logo"class="logo"/></a>
+      <nav class="navbar">
+        <ul class="navbar-lists">
+          <li><a class="navbar-link home-link" href="/" >Home</a></li>
+          <li><a class="navbar-link about-link" href="/about">About</a></li>
+          <li><a class="navbar-link service-link" href="/goal">Goal</a></li>
+          <li><a class="navbar-link portfolio-link" href="/vision">Vision</a></li>
+          <li><a class="navbar-link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-navbar-btn">
+        <i class="fa-solid fa-bars" name="menu-outline"
+        class="mobile-nav-icon"></i>
+
+         {% comment %} <i class="fa-solid fa-bars"    name="close-outline"
+        class="mobile-nav-icon"></i>   {% endcomment %}
+      </div>
+    </header>
+    {% block body%} {% endblock body %}
+
+
+    <footer class="section section-footer " >
+        <div class="container grid grid-four-col">
+          <div class="f-about">
+            <h3>About</h3>
+            <p>I am Karan Rai student of TYBCA(science) studing in Prof. Ramkrishna more college, and i am learning webdevelopment using django and react </p>
+          </div>
+  
+          <div class="f-links">
+             <h3>Links</h3>
+            <ul>
+                <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/">Home</a></li>
+                <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/about">About</a></li>
+                <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/goal">Goal</a></li>
+                <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/vision">Vision</a></li>
+                <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+  
+           <div class="f-services">
+              <h3>Services</h3>
+            <ul>
+              <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/contact">web development</a></li>
+                <li><span><i class="fa-solid fa-arrow-right"></i></span><a href="/contact">Django Project</a></li>
+             
+                  <li><span><i class="fa-solid fa-arrow-right"></i></i><a href="/contact">   Online Tution</a></li>
+                   <li><span><i class="fa-brands fa-youtube"></i></span><a href="https://www.youtube.com/watch?v=HqP42AVWQUg&list=PLtwNu7K_tV-PGps0O0l9X-64cAA0Vh0zy" target="_blank"> Youtube Course</a></li>
+            </ul>
+          </div>
+  
+          <div class="f-address"> 
+            <h3>Have a Questions?</h3>
+            <address>
+              <div>
+                <p>  <span><i class="fa-solid fa-house"></i></span> Rupeenagar,  Pune 411062 </p>
+              </div>
+  
+              <div>
+                <p>  <span><i class="fa-solid fa-phone-volume"></i></span> <a href="tel:+917249518265"> +91 7249518265 </a></p>
+              </div>
+  
+              <div>
+                <p>  <span><i class="fa-solid fa-envelope"></i></span> <a href="mailto:karannrai2002@gmail.com"> karankaushalendrarai@gmail.com</a> </p>
+              </div>
+            </address>
+          </div>
+        </div>
+  
+        <div class="container">
+  
+          <div class="f-credits">
+            <p>Copyright ©2023 All rights reserved by Karan Rai </p> 
+            {% comment %} have to update the date using the django  {% endcomment %}
+          </div>
+        </div>
+  
+      </footer>
+
+    <script src='{% static "js/script.js" %}'></script>
+    <script src='{% static "js/gallery.js" %}'></script>
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block style %}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #333;
+    margin-top: 100px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom:30px;
+    {% comment %} <!-- margin-bottom:150px; --> {% endcomment %}
+  }
+  .goal {
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px grey;
+    margin: 20px 0;
+    padding: 40px;
+    text-align: center;
+    transform: translateY(20px);
+  }
+  h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+  }
+{% endblock style %}
+  {% block title %}My Goals {% endblock title %}
+
+    {% block body %}
+   
+  
+  
+    <h1>My Goals</h1>
+    <div class="container" style="margin-bottom:30px">
+      <div class="goal">
+        <h2>Long Term Goal</h2>
+        <p>My long term goal is to become a successful software engineer and make a positive impact on society through technology.</p>
+      </div>
+      <div class="goal">
+        <h2>Short Term Goal</h2>
+        <p>My short term goal is to complete My Master in Computer Application from NIT Trichy</p>
+      </div>
+    </div>
+
+    {% endblock body %}

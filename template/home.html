@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block style %}
+    * {
+        box-sizing: border-box;
+    }
+    {% comment %} body {
+        background-color: #ecf0f1;
+    } {% endcomment %}
+    .gallery-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3vw;
+        {% comment %} line-height: 34px; {% endcomment %}
+        opacity: .80;
+    
+      
+    }
+    .gallery-title:hover{
+        opacity: 1;
+    }
+    .line{
+    background-color: red;
+    width: 40%;
+    margin: auto;
+    }
+    
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #fff;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+        width: 80%;
+        margin: 0 auto;
+        /* padding: 10px; */
+    }
+    .gallery-item {
+        flex-basis: 33.3%;
+        margin-bottom: 10px;  
+        opacity: .85;
+        
+        cursor: pointer;
+    }
+    .gallery-item:hover {
+        opacity: 1;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .gallery-content {
+        font-size: .8em;
+    }
+    
+    .lightbox {
+        position: fixed;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        top: 0;
+        left: 0;
+    }
+    .lightbox-content {
+        position: relative;
+        width: 65%;
+        height: 58%;
+    
+        margin: 5% auto;
+        margin-top: 100px;
+    }
+    .lightbox-content img {
+        border-radius: 3px;
+        border: 6px solid white;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .lightbox-prev,
+    .lightbox-next {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 9px;
+        top: 45%;
+        cursor: pointer;
+    }
+    .lightbox-prev {
+        left: 0;
+    }
+    .lightbox-next {
+        right: 0;
+    }
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        opacity: .8;
+    }
+    
+    @media (max-width: 767px) {
+        .gallery-container {
+            width: 100%;
+        }
+        .gallery-item {
+            flex-basis: 49.80%;
+            margin-bottom: 3px;
+        }
+        .lightbox-content {
+            width: 80%;
+            height: 60%;
+            margin: 15% auto;
+        }
+    }
+    @media (max-width: 480px) {
+        .gallery-item {
+            flex-basis: 100%;
+            margin-bottom: 1px;
+        }
+        .lightbox-content {
+            width: 90%;
+            margin: 20% auto;
+        }
+    }
+      
+    {% endblock style %}
+    {% block title %}home {% endblock title %}
+
+    {% block body %}
+    <main>
+        <section class="section-hero section">
+          <div class="container grid grid-two-col">
+            <div class="section-hero-data">
+              <p class="hero-top-data">This is me</p>
+              <h3 class="hero-heading">Karan Rai</h3>
+              <p class="hero-para">
+                I am karan rai . A Full stack Developer using django and react, youtuber and blogger
+              </p>
+              <div>
+                <a href="/about" class="btn ">Hire Me</a>
+              </div>
+            </div>
+  
+            <div class="section-hero-image">
+              <img src='{% static "image/image (141).png" %}' alt="image" class="hero-img" style="border-radius: 10px;"/>
+            </div>
+          </div>
+        </section>
+      </main>>
+
+      <section class="section-biodata section">
+        <div class="container grid grid-two-col">
+          <div class="bio-image">
+            <img src='{% static "image/KaranRai.jpeg" %}' alt="bio image" style="border-radius: 40px; width: 440px;" />
+          </div>
+          <div class="bio-data">
+            <h2 class="common-heading">my bio-data</h2>
+            <p >
+              I am a highly motivated and skilled web developer , currently pursuing  My Msc. Computer Application. 
+            </p>
+            <br />
+            <p >
+              I have a passion for technology and a strong desire to learn and grow as a web developer. I have experience in various programming languages such as HTML, CSS, JavaScript, and Framework such as React and Django. I have a strong understanding of website development, including both front-end and back-end development, and i am able to create dynamic, responsive websites that are visually appealing and user-friendly.
+            </p>
+  
+            <div class="bio-data-stats">
+              <div class="bio-stats">
+                <h3>HTML</h3>
+                <div class="bio-progress-bar">
+                  <span>80%</span>
+                </div>
+              </div>
+              <div class="bio-stats">
+                <h3>CSS</h3>
+                <div class="bio-progress-bar bio-progress-2">
+                   <span>70%</span>
+                </div>
+              </div>
+              <div class="bio-stats">
+                <h3>JavaScript</h3>
+                <div class="bio-progress-bar bio-progress-3">
+                   <span>60%</span>
+                </div>
+              </div>
+              <div class="bio-stats">
+                <h3>Django</h3>
+                <div class="bio-progress-bar bio-progress-4">
+                   <span>75%</span>
+                </div>
+              </div>
+              <div class="bio-stats">
+
+                <h3>React</h3>
+                <div class="bio-progress-bar bio-progress-5">
+                   <span>70%</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="bio-data-btn">
+              <a href='{% static "download/Karan Rai Resume Dec 2024.pdf" %}' class="btn" download > Downlaod Resume </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-portfolio section " id="portfolio-section">
+        <div class="container">
+          <h2 class="common-heading">Project Completed</h2>
+          <p>
+           I have completed some project using django and other technology,
+           and receive some positive feedback from my friends and teachers
+          </p>
+        </div>
+  
+        
+        <div class="container grid grid-three-col portfolio-images">
+          <div class="img-ovelay p-btn--1" >
+            <img src='{% static "image/1.jpg" %}' loading="lazy" alt="portfolio images "  />
+            <div class="overlay">
+              <a href="/contact" target="_blank"  class="common-heading">Project 1</a>
+            </div>
+          </div>
+  
+          {% comment %} <div class="img-ovelay p-btn--2">
+            <img src='{% static "image/2.jpg" %}' loading="lazy" alt="portfolio images " />
+            <div class="overlay">
+               <a href="" target="_blank"  class="common-heading">Project 2</a>
+            </div>
+          </div> {% endcomment %}
+  
+          <div class="img-ovelay p-btn--1">
+            <img src='{% static "image/3.jpg" %}' loading="lazy" alt="portfolio images "  />
+            <div class="overlay">
+               <a href="/contact" target="_blank"  class="common-heading">Project 2</a>
+            </div>
+          </div>
+          <div class="img-ovelay p-btn--1 p-btn--2">
+            <img src='{% static "image/4.jpg" %}' loading="lazy" alt="portfolio images "  />
+            <div class="overlay">
+               <a href="/contact" target="_blank"  class="common-heading">Project 3</a>
+            </div>
+          </div>
+          <div class="img-ovelay p-btn--1">
+            <img src='{% static "image/5.jpg" %}' loading="lazy" alt="portfolio images "  />
+            <div class="overlay">
+               <a href="/contact" target="_blank"  class="common-heading">Project 4</a>
+            </div>
+          </div>
+          <div class="img-ovelay p-btn--1">
+            <img src='{% static "image/1.jpg" %}' loading="lazy" alt="portfolio images "  />
+            <div class="overlay">
+               <a href="/contact" target="_blank"  class="common-heading">Project 5</a>
+            </div>
+          </div>
+          <div class="img-ovelay p-btn--1">
+            <img src='{% static "image/2.jpg" %}' loading="lazy" alt="portfolio images "  />
+            <div class="overlay">
+               <a href="/contact" target="_blank"  class="common-heading">Project 6</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {% comment %} Image gallery  {% endcomment %}
+      <div class="gallery-title">
+        <h1 >MY GALLERY</h1>
+    </div>
+    {% comment %} <span class="line">
+        <b><hr style="width:33%;text-align:center; border: 1px solid rgb(21, 18, 18);margin-top: 0; margin-bottom: 6vh;"></b>
+    </span> {% endcomment %}
+    <div class="gallery-container">
+      {% for Image in image reversed%}
+        <div class="gallery-item" data-index="{{ forloop.counter }}"><img src="{{Image.image.url}}" alt=""/></div>
+        {% endfor %}
+    </div>
+    
+    
+    {% endblock body %}

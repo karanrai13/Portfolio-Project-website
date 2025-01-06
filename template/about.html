@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    <title>{% block title %}About me {% endblock title %}</title>
+
+    {% block body %}
+    <div class="about-section">
+        <div class="about-container">
+            <div class="about-content-section">
+                <div class="about-title">About Me</div>
+                <div class="about-content">
+                    <h3>I am pursuing post graduation in Msc. Computer Application with a passion for web development </h3>
+                    <p>I have completed several projects during my studies that have enhance my abilities in HTML, CSS, JavaScript, and Framework like Django and React I am highly motivated to continue learning and expanding my skill set to stay up-to-date with the latest advancements in the field.
+                        I am excited to bring my enthusiasm, creativity, and dedication to web development to your organization. I am eager to work on challenging projects and contribute to the success of your team
+                    </p>
+                    <div class="about-button"><a href="/">Read More</a></div>
+                </div>
+            </div>
+            <div class="about-image-section">
+                <img src='{% static "image/image (141).png" %}' alt="" style="border-radius: 4px; width:350px;"/>
+            </div>
+        </div>
+
+    </div>
+    {% endblock body %}
+
